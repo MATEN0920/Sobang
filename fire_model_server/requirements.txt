@@ -1,0 +1,6 @@
+flask
+flask-cors
+torch>=1.8.0
+opencv-python
+Pillow
+pandas

@@ -1,0 +1,53 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.fire_fighting">
+    
+    <!-- 🌐 인터넷 및 위치 권한 추가 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:label="화재안전지도"
+        android:name="${applicationName}"
+        android:icon="@mipmap/ic_launcher">
+        
+        <!-- 🔑 카카오맵 API 키 추가 -->
+        <meta-data 
+            android:name="com.kakao.sdk.AppKey" 
+            android:value="77a3caaeba36ec76992e9b1b136e8ebe" />
+            
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@style/LaunchTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize">
+            
+            <!-- 기본 테마 설정 -->
+            <meta-data
+              android:name="io.flutter.embedding.android.NormalTheme"
+              android:resource="@style/NormalTheme" />
+              
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        
+        <!-- 🔧 앱이 지도 권한이 필요함을 시스템에 알림 -->
+        <meta-data android:name="flutterEmbedding" android:value="2" />
+    </application>
+    
+    <!-- 📍 위치 기능이 필수임을 선언 -->
+    <uses-feature 
+        android:name="android.hardware.location" 
+        android:required="true" />
+    <uses-feature 
+        android:name="android.hardware.location.gps" 
+        android:required="false" />
+</manifest>
