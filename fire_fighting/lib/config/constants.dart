@@ -2,8 +2,8 @@
 
 class Constants {
   // 카카오 API 키들 - 실제 운영시에는 환경 변수나 별도 파일로 관리하세요
-  static const String kakaoRestApiKey = '5584d4e1e63f1cb733ddb7def7e3248f';
-  static const String kakaoJavascriptKey = '77a3caaeba36ec76992e9b1b136e8ebe';
+  static const String kakaoRestApiKey = 'YOUR_OPEN_API_KEY';
+  static const String kakaoJavascriptKey = 'YOUR_OPEN_API_KEY';
 
   // ⚠️ 보안 주의: 실제 배포 시에는 다음과 같이 처리하세요:
   // 1. .env 파일 사용: flutter_dotenv 패키지
